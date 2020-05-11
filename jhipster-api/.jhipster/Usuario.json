@@ -1,0 +1,35 @@
+{
+    "name": "Usuario",
+    "fields": [
+        {
+            "fieldName": "userName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "portfolio",
+            "otherEntityRelationshipName": "usuario",
+            "relationshipName": "portfolio"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "userSettings",
+            "otherEntityRelationshipName": "usuario",
+            "relationshipName": "userSettings",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200511180700",
+    "entityTableName": "usuario",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

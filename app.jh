@@ -1,0 +1,65 @@
+application {
+  config {
+    applicationType monolith,
+    baseName DividendTracker
+    packageName com.okta.developer,
+    authenticationType oauth2,
+    prodDatabaseType postgresql,
+    buildTool gradle,
+    searchEngine elasticsearch,
+    testFrameworks [protractor],
+    clientFramework react,
+    useSass true,
+    enableTranslation true,
+    nativeLanguage en,
+    languages [en, es]
+  }
+  entities Usuario, UserSettings, Portfolio, Company, PurchasePrices
+}
+
+// JDL definition for application 'TwentyOnePoints' generated with command 'jhipster export-jdl'
+
+entity Usuario {
+	userName String
+}
+
+entity UserSettings {
+	language String,
+    darkMode Boolean,
+}
+
+entity Portfolio {
+	title String,
+	description String
+}
+
+entity Company {
+	symbol String,
+    shares Integer
+}
+
+entity PurchasePrices {
+	purchaseDate LocalDate,
+    purchasePrice Integer
+}
+
+relationship OneToMany {
+	Company to PurchasePrices
+}
+
+relationship OneToOne {
+	UserSettings to Usuario
+}
+
+relationship OneToMany {
+	Usuario to Portfolio
+}
+
+relationship OneToMany {
+	Portfolio to Company
+}
+
+// Set pagination options
+paginate Usuario with infinite-scroll
+paginate Company with pagination
+

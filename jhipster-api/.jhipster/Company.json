@@ -1,0 +1,39 @@
+{
+    "name": "Company",
+    "fields": [
+        {
+            "fieldName": "symbol",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "shares",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "purchasePrices",
+            "otherEntityRelationshipName": "company",
+            "relationshipName": "purchasePrices"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "portfolio",
+            "otherEntityRelationshipName": "company",
+            "relationshipName": "portfolio",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200511181000",
+    "entityTableName": "company",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

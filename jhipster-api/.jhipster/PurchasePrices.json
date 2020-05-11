@@ -1,0 +1,33 @@
+{
+    "name": "PurchasePrices",
+    "fields": [
+        {
+            "fieldName": "purchaseDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "purchasePrice",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "company",
+            "otherEntityRelationshipName": "purchasePrices",
+            "relationshipName": "company",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200511181100",
+    "entityTableName": "purchase_prices",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
